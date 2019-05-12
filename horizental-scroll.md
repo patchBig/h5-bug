@@ -47,12 +47,12 @@ sets whether the back face of an element is visible when turned towards the user
 1. visible
 
         The back face is visible when turned towards the user.
-        
+
 2. hidden
 
         The back face is hidden, effectively making the element invisible when turned away from the user.
 
-![](images/76b865bc.png)
+![backface-visibility](images/76b865bc.png)
 
 ---
 
@@ -60,7 +60,7 @@ sets whether the back face of an element is visible when turned towards the user
 
 指定了观察者与 z=0 平面的距离，使具有三维位置变换的元素产生透视效果。 z>0 的三维元素比正常大，而 z<0 时则比正常小，大小程度由该属性的值决定。
 
-![](images/560332d0.png)
+![perspective](images/560332d0.png)
 
 ---
 
@@ -69,18 +69,20 @@ sets whether the back face of an element is visible when turned towards the user
 > Non-standard
 This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
 
-#### values
+#### **values**
 
-**auto**
+1. auto
 
     Use "regular" scrolling, where the content immediately ceases to scroll when you remove your finger from the touchscreen.
+
     (使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止。)
-        
-**touch**
+
+2. touch
 
     Use momentum-based scrolling, where the content continues to scroll for a while after finishing the scroll gesture and removing your finger from the touchscreen. The speed and duration of the continued scrolling is proportional to how vigorous the scroll gesture was. Also creates a new stacking context.
-    使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文。
-    
+
+    (使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文。)
+
 ---
 
 ### ::-webkit-scrollbar
@@ -89,8 +91,8 @@ CSS伪类选择器影响了一个元素的滚动条的样式
 
 > Non-standard
 This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
-
-> ::-webkit-scrollbar is only available in WebKit-based browsers (e.g., Safari, all browsers on iOS, and others).
+>
+>::-webkit-scrollbar is only available in WebKit-based browsers (e.g., Safari, all browsers on iOS, and others).
 
 ## 不生效的情况
 
@@ -98,7 +100,7 @@ This feature is non-standard and is not on a standards track. Do not use it on p
 
 ## 解决方法
 
-#### 1. 把滚动条撑开，然后通过负值的外边距抵消撑开的部分，使得外容器高度不受影响，从而大道滚动条溢出隐藏
+### 1. 把滚动条撑开，然后通过负值的外边距抵消撑开的部分，使得外容器高度不受影响，从而大道滚动条溢出隐藏
 
 ```html
 <div class="slider">
@@ -116,7 +118,7 @@ This feature is non-standard and is not on a standards track. Do not use it on p
 }
 ```
 
-#### 2. 将外面的容器高度设置成小于实际容器的高度，通过 `overflow: hidden` 隐藏滚动条。
+### 2. 将外面的容器高度设置成小于实际容器的高度，通过 `overflow: hidden` 隐藏滚动条。
 
 ```css
 .slider {
